@@ -1,0 +1,139 @@
+/* Products section styling */
+.products-section {
+    padding: 50px 100px;
+    
+    background-color: #f9f9f9;
+    text-align: start;
+  }
+  
+  /* Header styling */
+  .products-header {
+    margin-bottom: 30px;
+  }
+  
+  .products-header .subheading {
+    position: relative;
+    color: hsl(19, 93%, 57%); /* Orange color */
+    font-size: 14px;
+    /* font-weight: bold; */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-left: 80px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.3rem;
+  }
+  
+  /* Prefix for subheading */
+  .products-header .subheading::before {
+    content: '';
+    width: 3px;
+    height: 18px;
+    background-color: hsl(19, 93%, 57%);
+    margin-right: 1rem;
+    display: inline-block;
+    border-radius: 2px;
+  }
+  
+  .products-header .title {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 4rem;
+    margin: 10px 0 30px;
+    color: #060714; /* Darker text for contrast */
+    margin-left: 80px;
+    letter-spacing: 2px;
+  }
+  
+  /* Grid container for cards */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns initially */
+    grid-auto-rows: auto; /* Ensure rows adapt to content height */
+    gap: 15px; /* Reduced spacing between cards */
+    justify-content: center; /* Center items horizontally */
+    justify-items: center; /* Center individual cards */
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 992px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+      gap: 10px; /* Further reduce spacing for medium screens */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .products-header .title {
+      font-size: 28px;
+      margin-left: 20px;
+      text-align: start;
+    }
+  
+    .products-header .subheading {
+      font-size: 12px;
+      margin-left: 20px;
+      
+      text-align: start;
+    }
+  
+    .products-grid {
+      grid-template-columns: repeat(1, 1fr); /* 1 column for small screens */
+      gap: 10px; /* Further reduce spacing for small screens */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .products-header .title {
+      font-size: 24px;
+      text-align: start;
+    }
+  
+    .products-header .subheading {
+      font-size: 10px;
+      text-align: start;
+    }
+  }
+
+
+
+ /* View More Button Styling */
+.view-more-container {
+    text-align: end;
+    
+    margin-right: 4.5rem;
+    margin-top: 2.5rem;
+  }
+  
+  .view-more-button {
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none; 
+    /* text-underline-offset: 3px; */
+    color: hsl(19, 93%, 57%); /* Orange color */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* Space between text and arrow */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .view-more-button:hover {
+    color: hsl(19, 75%, 47%); /* Slightly darker orange on hover */
+    font-size: large;
+    margin-right: 0;
+    
+  }
+  
+  .view-more-button:hover .arrow-symbol {
+    transform: translateX(15px) scaleX(2); /* Arrow moves to the right and elongates */
+    
+  }
+  
+  .arrow-symbol { 
+    font-size: 1rem;
+    font-weight: bold;
+    
+    transition: transform 0.3s ease; /* Smooth animation for movement and scaling */
+  }
+  

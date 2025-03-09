@@ -1,0 +1,270 @@
+/* Footer Styles */
+.footer-container {
+  background-color: #0b0d26;
+  color: #9BA2AD;
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  border-bottom: 2px solid #9BA2AD;
+  flex-wrap: wrap; /* Allow sections to wrap to the next line */
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 20%;
+  padding: 3rem;
+}
+
+.footer-brand-logo {
+  width: 60px;
+  height: 70px;
+  background-color: transparent;
+  padding-top: 15%;
+}
+
+.footer-brand-text {
+  font-size: 1rem;
+  color: #9BA2AD;
+  margin-top: 2rem;
+}
+
+.footer-nav,
+.footer-office,
+.footer-newsletter {
+  flex: 1;
+  padding: 3rem;
+  margin-top: 1rem;
+}
+
+.footer-nav-title,
+.footer-office-title,
+.newsletter-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #FCFCFC;
+}
+
+.footer-nav-list {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.footer-nav-item {
+  margin-bottom: 0.7rem;
+  padding: 5px 0;
+}
+
+.footer-nav-link {
+  color: #9BA2AD;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-nav-link:hover {
+  color: #FCFCFC;
+  transform: translateX(5px);
+}
+
+.footer-nav-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #FCFCFC;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.footer-nav-link:hover::after {
+  width: 80px;
+}
+
+/* Office Section */
+.footer-office {
+  margin-top: 1rem;
+  flex: 1;
+  padding: 3rem;
+}
+
+.footer-office-address,
+.footer-office-email,
+.footer-office-phone {
+  color: #9BA2AD;
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+  padding: 10px 0;
+}
+
+/* Newsletter Section */
+.footer-newsletter {
+  margin-top: 1rem;
+  flex: 1;
+  padding: 3rem;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newsletter-input-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.newsletter-input {
+  width: 100%; /* Make the email input take full width */
+  padding: 0.8rem 1rem;
+  border: none;
+  background-color: transparent;
+  color: #9BA2AD;
+  font-size: 1rem;
+  border-bottom: 2px solid #9BA2AD;
+}
+
+.newsletter-input::placeholder {
+  color: #9BA2AD;
+}
+
+.newsletter-icon {
+  color: #9BA2AD;
+  font-size: 1.5rem;
+}
+
+.newsletter-arrow {
+  background: none;
+  border: none;
+  color: #FCFCFC;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.newsletter-arrow:hover {
+  color: #9BA2AD;
+}
+
+.newsletter-privacy {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.newsletter-privacy input {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 2px solid #9BA2AD;
+  cursor: pointer;
+}
+
+.newsletter-privacy input:checked {
+  background-color: #9BA2AD;
+}
+
+.newsletter-privacy label {
+  font-size: 1rem;
+  color: #9BA2AD;
+}
+
+.newsletter-submit {
+  background-color: #FCFCFC;
+  color: #0b0d26;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-submit:hover {
+  background-color: #9BA2AD;
+  transform: scale(1.05);
+}
+
+/* Footer Bottom Styles */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  color: #9BA2AD;
+  font-size: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.footer-left p {
+  margin: 0;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 2rem;
+}
+
+.social-link {
+  color: #9BA2AD;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+  color: #FCFCFC;
+  transform: scale(1.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-wrapper {
+      flex-direction: column;
+      align-items: flex-start; /* Align everything to the left */
+  }
+
+  .footer-nav,
+  .footer-office,
+  .footer-newsletter {
+      flex: 0 0 100%;
+      padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .footer-bottom {
+      flex-direction: column;
+      text-align: left;
+  }
+
+  .footer-socials {
+      justify-content: flex-start;
+      gap: 1.5rem;
+  }
+
+  .footer-brand {
+      max-width: 100%; /* Make the brand section take full width on smaller screens */
+      padding: 2rem 0; /* Adjust padding */
+  }
+
+  .newsletter-input-container {
+      flex-direction: column; /* Make input fields stack vertically */
+  }
+
+  .newsletter-arrow {
+      margin-top: 1rem;
+  }
+
+  .footer-bottom {
+      width: 100%;
+      padding: 1rem 0; /* Adjust bottom section padding */
+  }
+}

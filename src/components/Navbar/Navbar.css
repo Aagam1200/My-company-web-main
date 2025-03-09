@@ -1,0 +1,385 @@
+/* Navbar Styles */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color:rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  padding: 20px 30px;
+  /* border-bottom: 2px solid white; */
+  
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+  
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  /* padding-right: 13rem; */
+}
+
+.navbar-logo-image {
+  height: 50px;
+  margin-right: 20px;
+}
+
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 7rem;
+  /* padding-right: 5rem; */
+  /* padding-left: 5rem; */
+  padding-left: 10%;
+}
+
+.navbar-link {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  
+}
+
+.navbar-link:hover {
+  text-decoration: underline 2px;
+}
+
+/* Add Z-index to ensure dropdown shows on top */
+.navbar-link.dropdown {
+  position: relative; /* Needed for positioning dropdown */
+  z-index: 2000;
+}
+/* Dropdown menu container */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% ); /* Space below the "Products" link */
+  left: 0;
+  background-color: #0B0D26; /* Dark background color */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Prevent mouse interaction when hidden */
+  transform: translateY(-10px); /* Start slightly above */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s; /* Smooth fade and slide */
+  z-index: 2000; /* Ensures it stays on top */
+  width: 200px;
+}
+
+/* Show the dropdown on hover and with a delay on hide */
+.navbar-link.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+  opacity: 1; /* Make visible */
+  visibility: visible;
+  transform: translateY(0); /* Slide into position */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 2s 2s; /* No delay on visibility when hovered */
+}
+
+/* Add a delay to prevent the menu from disappearing immediately */
+.navbar-link.dropdown {
+  position: relative;
+}
+
+.navbar-link.dropdown:hover .dropdown-menu {
+  transition-delay: 0.2s; /* Keep the menu visible for a bit after hover */
+}
+
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 0.8rem 1.5rem;
+  color: #fff; /* White text */
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none; /* Remove the border for the last item */
+}
+
+.dropdown-item:hover {
+  background-color: #1a1c45; /* Slightly lighter background on hover */
+  transform: translateX(5px); /* Subtle movement to the right */
+}
+
+/* Arrow Indicator */
+/* .navbar-link.dropdown::after {
+  content: "▼"; 
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: white;
+  transition: transform 0.3s ease;
+} */
+
+/* .navbar-link.dropdown:hover::after {
+  transform: rotate(180deg); 
+} */
+
+/* Underline Effect for Dropdown Items */
+.dropdown-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fa4729; /* Highlight color */
+  transition: width 0.3s ease;
+}
+
+.dropdown-item:hover::before {
+  width: 100%; /* Underline grows on hover */
+}
+
+/* Add Spacing Around Dropdown */
+.navbar-links .dropdown {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Responsive Dropdown */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+  }
+
+  .dropdown-item {
+    padding: 0.5rem 1rem;
+  }
+}
+ 
+.arrow-symbol { 
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.3rem;
+  transition: transform 0.3s ease; /* Smooth animation for movement and scaling */
+}
+
+
+.social-icons {
+  display: flex;
+  gap: 3.5rem;
+  margin-left: auto;
+  /* padding-left: 5rem; */
+  justify-content: end;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.social-icons a:hover {
+  color: gray;
+}
+
+.menu-button {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  /* top: 1rem; */
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  gap: 2rem;
+  text-align: center;
+  max-width: 100vw ;
+  max-height: 100vh;
+}
+
+.mobile-menu .navbar-logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu .navbar-logo-image {
+  height: 40px;
+}
+
+.mobile-menu .close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-link {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.mobile-menu-link:hover {
+  color: gray;
+  transform: scale(1.1);
+}
+
+.mobile-social-icons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.mobile-social-icons a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-social-icons a:hover {
+  color: gray;
+  transform: scale(1.2);
+}
+@media (max-width: 1300px) {
+  
+
+  .social-icons {
+    display: none;
+  }
+  
+}
+@media (max-width: 1024px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .social-icons {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+    
+  }
+}
+@media (max-width: 768px) {
+  .navbar-logo-image {
+    height: 40px;
+  }
+ 
+ 
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.6rem 1rem;
+  }
+
+  
+}@media (max-width: 500px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .menu-button {
+    position: absolute;
+     right: 2rem;
+    
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-center {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    background-color: #0B0D26; 
+  }
+
+  .nav-menu li {
+    margin: 15px 0;
+  }
+
+  .navbar-right {
+    display: none; /* Hide desktop social icons */
+  }
+
+  .social-icons-mobile {
+    display: flex; /* Show mobile social icons horizontally */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px;
+  }
+
+  .navbar-left {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+.navbar-link:hover {
+  color: #FCFCFC;
+  transform: translateX(3px);
+}
+
+.navbar-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #FCFCFC;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
